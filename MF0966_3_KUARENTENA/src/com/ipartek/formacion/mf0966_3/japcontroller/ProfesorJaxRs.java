@@ -28,7 +28,7 @@ public class ProfesorJaxRs {
 	private ServletContext context;
 	Dao<Profesor> profesoresDao;
 	static {
-		LOGGER.info("Generando JaxRS de clientes");
+		LOGGER.info("Generando JaxRS de profesores");
 	}
 	@GET
 	public Iterable<Profesor> getAll() {
@@ -47,6 +47,8 @@ public class ProfesorJaxRs {
 		profesoresDao = (Dao<Profesor>) context.getAttribute("daoProfesores");
 		Profesor profesor = profesoresDao.obtenerPorId(id);
 		if(profesor ==null) {
+			LOGGER.warning("No se a encontrado ningun profesor para ese ID: " + id);
+			
 			MensajeError mensaje = new MensajeError("No se a encontrado ningun profesor para ese ID.",null);
 			return Response.status(Status.NOT_FOUND).entity(mensaje).build();
 		}

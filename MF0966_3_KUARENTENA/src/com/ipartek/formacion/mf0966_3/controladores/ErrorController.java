@@ -33,10 +33,8 @@ public class ErrorController extends HttpServlet {
 
 			String error = request.getParameter("error");
 			if (error == null) {
-				System.out.println("aaaaa");
 				request.getRequestDispatcher("/WEB-INF/vistas/error.jsp").forward(request, response);
 			} else {
-				System.out.println("bbbb");
 				response.sendRedirect(request.getContextPath() + "/index");
 			}
 		}

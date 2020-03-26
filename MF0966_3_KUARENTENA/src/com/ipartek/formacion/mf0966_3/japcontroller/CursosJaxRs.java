@@ -28,7 +28,7 @@ public class CursosJaxRs {
 	private ServletContext context;
 	Dao<Curso> cursosDao;
 	static {
-		LOGGER.info("Generando JaxRS de clientes");
+		LOGGER.info("Generando JaxRS de cursos");
 	}
 	@GET
 	public Iterable<Curso> getAll() {
@@ -47,6 +47,8 @@ public class CursosJaxRs {
 		cursosDao = (Dao<Curso>) context.getAttribute("daoCursos");
 		Curso alumno = cursosDao.obtenerPorId(id);
 		if(alumno ==null) {
+			LOGGER.warning("No se a encontrado ningun curso para ese ID: " + id);
+			
 			MensajeError mensaje = new MensajeError("No se a encontrado ningun curso para ese ID.",null);
 			return Response.status(Status.NOT_FOUND).entity(mensaje).build();
 		}

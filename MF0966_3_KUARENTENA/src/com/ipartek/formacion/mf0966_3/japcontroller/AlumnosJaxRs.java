@@ -28,7 +28,7 @@ public class AlumnosJaxRs {
 	private ServletContext context;
 	Dao<Alumno> alumnosDao;
 	static {
-		LOGGER.info("Generando JaxRS de clientes");
+		LOGGER.info("Generando JaxRS de alumnos");
 	}
 	@GET
 	public Iterable<Alumno> getAll() {
@@ -47,6 +47,8 @@ public class AlumnosJaxRs {
 		alumnosDao = (Dao<Alumno>) context.getAttribute("daoAlumnos");
 		Alumno alumno = alumnosDao.obtenerPorId(id);
 		if(alumno ==null) {
+			LOGGER.warning("No se a encontrado ningun alumno para ese ID: " + id);
+			
 			MensajeError mensaje = new MensajeError("No se a encontrado ningun alumno para ese ID.",null);
 			return Response.status(Status.NOT_FOUND).entity(mensaje).build();
 		}
