@@ -17,7 +17,6 @@ public class ErrorController extends HttpServlet {
 			throws ServletException, IOException {
 		String pathAnterior = request.getAttribute("javax.servlet.error.request_uri").toString();
 		String[] splitPathAnterior = pathAnterior.split("/");
-		System.out.println(pathAnterior);
 		
 		if (splitPathAnterior[2].equals("api")) {
 			

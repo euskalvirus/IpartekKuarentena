@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+.redes-sociales {
+	font-size: 2em;
+}
+
+header {
+	height: 100px;
+	background-color: #6974d1;
+	justify-content: center;
+	display: flex;
+}
+
+h1 {
+	align-self: center;
+}
+
+table.dataTable thead>tr>th.sorting_asc, table.dataTable thead>tr>th.sorting_desc,
+	table.dataTable thead>tr>th.sorting, table.dataTable thead>tr>td.sorting_asc,
+	table.dataTable thead>tr>td.sorting_desc, table.dataTable thead>tr>td.sorting,
+	table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
+	{
+	text-align: center !important;
+}
+
+.resena {
+	max-width: 20em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#objetos {
+	margin-bottom: 1em;
+	padding-bottom: 3em;
+}
+
+
+#botones>.btn-block {
+	height: 20% !important;
+	align-items: center;
+}
+
+.icon-ok {
+	font-size: 40px;
+}
+
+#top {
+	z-index: 10000;
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+@media ( min-width : 560px) {
+	#top {
+		display: none;
+	}
+}
+
+@media ( max-width : 553px) {
+	.icon-ok {
+		font-size: 35px;
+	}
+}
