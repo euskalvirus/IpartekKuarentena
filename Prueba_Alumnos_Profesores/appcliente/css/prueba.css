@@ -8,4 +8,11 @@
 
 main {
     padding-top: 10px;
+    margin: auto;
+}
+
+h1 {
+    background-color: rgb(7, 124, 109);
+    color: white;
+    font-size: 2em;
 }
